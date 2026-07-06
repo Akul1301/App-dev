@@ -1,9 +1,16 @@
+import 'dart:convert'; // Converts raw network string text into readable Map formats
+import 'package:http/http.dart' as http; // The execution package
+
+
+
 class QuizQuestion {
 
-  final String text;
-  final List<String> answers;
+  final String questionText;
+  final List<String> options;
+  final int correctAnswerIndex;
+  final String category;
 
-  const QuizQuestion({required this.text, required this.answers});
+  const QuizQuestion({required this.questionText, required this.options, required this.correctAnswerIndex, required this.category});
 
 
   List<String> getShuffledAnswers(){
